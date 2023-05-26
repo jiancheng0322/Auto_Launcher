@@ -262,9 +262,13 @@ def gettext(driver,button):
     :param button:
     :return:
     '''
-    tvTitle = appium_oper.wait_ele_by_xpath(driver,button, 5)
-    title = tvTitle[1].text
-    return title
+    tvtitle = appium_oper.wait_ele_by_xpath(driver,button, 5)
+    title = tvtitle[1].text
+    if title is not None:
+        return title
+    else:
+        return False
+
 def longpress_download(driver, type, where, ele_object):
     '''
     长按选中-下载（单选）

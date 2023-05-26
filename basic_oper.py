@@ -3,10 +3,13 @@
 元素点击
 元素名称获取
 """
+from selenium.common.exceptions import ElementNotVisibleException
+
 import appium_oper
 import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 import board
 
 
@@ -179,6 +182,12 @@ def check_by_id_fal(driver,id_info):
         return False
 
 # coding=utf-8
+def wait_ele_click(driver,id_info):
+    """等待元素出现后点击"""
+    element = WebDriverWait(driver, 20).until(lambda x: x.find_element_by_id(id_info))
+    element.click()
+
+
 def is_toast_exist(driver, text, timeout=5, poll_frequency=0.5):
     '''
 	is toast exist, return True or False

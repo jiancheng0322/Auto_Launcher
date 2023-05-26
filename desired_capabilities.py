@@ -11,7 +11,7 @@ def get_desired_capabilities():
         "platformVersion": "9",
         "appPackage": "com.dangbei.leard.leradlauncher",
         "appActivity": ".ui.splash.SplashActivity",
-        "deviceName": "10.192.28.156:5555",
+        "deviceName": "10.192.28.106:5555",
         "automationName": "Appium",
         "noReset": "True"
     }
