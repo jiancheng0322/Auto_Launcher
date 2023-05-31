@@ -175,7 +175,7 @@ class MqcTest(TestCase):
                                            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.TextView")
             self.assertNotEqual(text1, text2)
         except:
-            self.getScreenShot("test_PersonalCenter")
+            self.getScreenShot("test_Personal1")
             return False
 
     def test_Personal2(self):
@@ -347,7 +347,7 @@ class MqcTest(TestCase):
                         basic_oper.click_by_id(driver,
                                                "com.dangbei.leard.leradlauncher:id/activity_star_topic_detail_collection_view")  # 点击爱心
         except Exception as e:
-            self.getScreenShot("test_PersonalCenter")
+            self.getScreenShot("test_Personal4")
             return False
 
     def test_Personal5(self):
@@ -396,7 +396,7 @@ class MqcTest(TestCase):
                         basic_oper.click_by_id(driver,
                                                "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.FrameLayout[3]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[3]/android.widget.TextView")  # 点击预约
         except Exception as e:
-            self.getScreenShot("test_PersonalCenter")
+            self.getScreenShot("test_Personal5")
             return False
 
     def test_myjob1(self):
@@ -465,38 +465,139 @@ class MqcTest(TestCase):
                 board.remotecontrol("down")
                 board.remotecontrol("menu")
                 basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
-
-
         except:
-            self.getScreenShot("test")
+            self.getScreenShot("test_myjob2")
 
     def test_movie1(self):
+        """进入芒果tv二级页播放视频"""
+        driver = self.driver
+        try:
+            board.remotecontrol("backhome")
+            time.sleep(2)
+            board.remotecontrol("down")
+            board.remotecontrol("down")
+            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[7]/android.widget.TextView")
+            text1=public_methods.gettext(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView[3]")
+            if self.assertEqual(text1,"芒果专区"):
+                basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.view.View[2]")
+                time.sleep(2)
+                basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[3]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.TextView")
+                board.remotecontrol("back")
+                board.remotecontrol("back")
+        except (NoSuchElementException, TimeoutException):
+            return False, self.getScreenShot("test_movie1")
+
+    def test_desktop1(self):
+        """在卡片桌面移动组件"""
+        driver = self.driver
+        try:
+            board.remotecontrol("backhome")
+            time.sleep(2)
+            board.remotecontrol("right")
+            board.remotecontrol("menu")
+            """移动组件"""
+            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.FrameLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.TextView")
+            board.remotecontrol("right")
+            board.remotecontrol("right")
+            board.remotecontrol("ok")
+
+            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[4]/android.widget.FrameLayout/android.view.View")
+            if basic_oper.check_by_name_contains(driver,"电视剧"):
+                basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
+                board.remotecontrol("right")
+                board.remotecontrol("ok")
+
+
+            board.remotecontrol("right")
+            board.remotecontrol("right")
+        except (NoSuchElementException, TimeoutException):
+            return False, self.getScreenShot("test_desktop1")
+
+    def test_desktop2(self):
+        """在卡片桌面添加组件"""
+        driver = self.driver
+        try:
+            board.remotecontrol("backhome")
+            time.sleep(2)
+            board.remotecontrol("right")
+            board.remotecontrol("right")
+            board.remotecontrol("right")
+
+            basic_oper.click_by_xpath(driver,
+                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[4]/android.widget.FrameLayout/android.view.View")
+            if basic_oper.check_by_name_contains(driver, "电视剧"):
+                basic_oper.click_by_xpath(driver,
+                                          "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
+                board.remotecontrol("right")
+                board.remotecontrol("ok")
+
+
+        except (NoSuchElementException, TimeoutException):
+            return False, self.getScreenShot("test_desktop2")
+
+    def test_desktop3(self):
+        """在卡片桌面移除组件"""
+        driver = self.driver
+        try:
+            board.remotecontrol("backhome")
+            time.sleep(2)
+            board.remotecontrol("right")
+            board.remotecontrol("right")
+            board.remotecontrol("right")
+            board.remotecontrol("right")
+            board.remotecontrol("menu")
+            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[4]/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.TextView")
+
+        except (NoSuchElementException, TimeoutException):
+            return False, self.getScreenShot("test_desktop3")
+
+    def test_changemode1(self):
+        """标准模式切换到长辈模式"""
+        driver = self.driver
+        try:
+            board.remotecontrol("backhome")
+            time.sleep(2)
+            board.remotecontrol("up")
+            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
+            if basic_oper.check_by_name_contains(driver,"长辈"):
+                basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
+            text1=public_methods.gettext(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView")
+            self.assertEqual(text1,"观看记录")
+
+        except (NoSuchElementException, TimeoutException):
+            return False, self.getScreenShot("test_changemode1")
+
+    def test_changemode2(self):
+        """长辈模式切换到儿童模式"""
+        driver = self.driver
+        try:
+            board.remotecontrol("backhome")
+            time.sleep(2)
+            board.remotecontrol("up")
+            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
+            if basic_oper.check_by_name_contains(driver,"长辈"):
+                basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
+            text1=public_methods.gettext(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView")
+            self.assertEqual(text1,"观看记录")
+
+        except (NoSuchElementException, TimeoutException):
+            return False, self.getScreenShot("test_changemode2")
+
+    def test_button(self):
         driver = self.driver
         try:
             while True:
                 board.remotecontrol("back")
                 if appium_oper.find_ele_by_text_contains(driver, "杭州"):
                     break
-            board.remotecontrol("down")
-            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[3]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.ImageView")
-            basic_oper.click_by_xpath(driver,"com.dangbei.leard.leradlauncher:id/view_item_secondary_menu_filter_name")     #点击筛选
-            basic_oper.click_by_text_contains(driver,"免费")
-            basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout")
-            basic_oper.click_by_text_contains(driver, "全屏")
-            board.remotecontrol("back")
+
+
 
         except (NoSuchElementException, TimeoutException):
             return False, self.getScreenShot("test_movie1")
 
 
-
-
-
-    def test_button(self):
-        driver = self.driver
-        self.getScreenShot("test")
-
-    def tearDown(self):
+def tearDown(self):
         # 测试结束，退出会话。
         self.driver.quit()
 
