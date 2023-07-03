@@ -156,15 +156,15 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">开始时间</button>
-                <span class="text-dark">2023-05-25 19:05:08</span>
+                <span class="text-dark">2023-06-14 15:53:41</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">执行时间</button>
-                <span class="text-dark">363.22 S</span>
+                <span class="text-dark">492.70 S</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">用例总数</button>
-                <span class="text-dark">10</span>
+                <span class="text-dark">14</span>
             </li>
 
 
@@ -183,7 +183,7 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-danger">错误用例</button>
-                <span class="text-danger">1</span>
+                <span class="text-danger">5</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-secondary">跳过用例</button>
@@ -256,7 +256,7 @@
                     <td class="MqcTest">MqcTest</td>
                     <td>test_1_search</td>
                     <td>搜索页面</td>
-                    <td>1.02e+02s</td>
+                    <td>1.06e+02s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -270,8 +270,7 @@
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>播放视频成功
-test_1_search (test_main.MqcTest)执行——>【通过】
+                            <pre>test_1_search (test_main.MqcTest)执行——>【通过】
 </pre>
                         
                         
@@ -283,7 +282,7 @@ test_1_search (test_main.MqcTest)执行——>【通过】
                     <td class="MqcTest">MqcTest</td>
                     <td>test_Personal1</td>
                     <td>进入个人中心-观看记录，点击观看记录播放影片，播放成功后返回删除该条观看记录</td>
-                    <td>48.6s</td>
+                    <td>48.7s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -297,9 +296,8 @@ test_1_search (test_main.MqcTest)执行——>【通过】
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>播放视频成功
-Traceback (most recent call last):
-  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 166, in test_Personal1
+                            <pre>Traceback (most recent call last):
+  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 168, in test_Personal1
     "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.TextView")
   File "D:\auto\AutoTest\Launcher_test\public_methods.py", line 266, in gettext
     title = tvtitle[1].text
@@ -316,7 +314,7 @@ test_Personal1 (test_main.MqcTest)执行——>【通过】
                     <td class="MqcTest">MqcTest</td>
                     <td>test_Personal2</td>
                     <td>进入个人中心，去收藏一部影片后删除；若已有收藏的影片，则先全部删除然后点击去看一看</td>
-                    <td>27.2s</td>
+                    <td>33.6s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -342,138 +340,7 @@ test_Personal1 (test_main.MqcTest)执行——>【通过】
                     <td class="MqcTest">MqcTest</td>
                     <td>test_Personal3</td>
                     <td>进入收藏的专题，去收藏一个专题后删除，若已有收藏的专题，则先全部删除然后点击去看一看</td>
-                    <td>18.9s</td>
-                    
-                        <td class="text-success">成功</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>test_Personal3 (test_main.MqcTest)执行——>【通过】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>5</td>
-                    <td class="MqcTest">MqcTest</td>
-                    <td>test_Personal4</td>
-                    <td>进入收藏的明星，去收藏一个明星后删除，若已有收藏的明星，则先全部删除然后点击去看一看</td>
-                    <td>18.5s</td>
-                    
-                        <td class="text-success">成功</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>test_Personal4 (test_main.MqcTest)执行——>【通过】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>6</td>
-                    <td class="MqcTest">MqcTest</td>
-                    <td>test_Personal5</td>
-                    <td>进入我的预约，去预约一部影片，若已有预约的影片，则先全部删除然后点击去看一看</td>
-                    <td>18.2s</td>
-                    
-                        <td class="text-success">成功</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>test_Personal5 (test_main.MqcTest)执行——>【通过】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>7</td>
-                    <td class="MqcTest">MqcTest</td>
-                    <td>test_button</td>
-                    <td>None</td>
-                    <td>16.3s</td>
-                    
-                        <td class="text-success">成功</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>NoneType: None
-test_button (test_main.MqcTest)执行——>【通过】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>8</td>
-                    <td class="MqcTest">MqcTest</td>
-                    <td>test_movie1</td>
-                    <td>None</td>
-                    <td>18.2s</td>
-                    
-                        <td class="text-success">成功</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>test_movie1 (test_main.MqcTest)执行——>【通过】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>9</td>
-                    <td class="MqcTest">MqcTest</td>
-                    <td>test_myjob1</td>
-                    <td>进入我的应用，移动应用，测试环境为：组件桌面，我的应用置于第一位下方</td>
-                    <td>32.4s</td>
+                    <td>27.4s</td>
                     
                         <td class="text-danger">错误</td>
                     
@@ -501,22 +368,52 @@ test_button (test_main.MqcTest)执行——>【通过】
 </pre>
                         
 
-                            <pre>  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 422, in test_myjob1
-    "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[3]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.TextView")
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 239, in test_Personal3
+    "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.TextView")
 </pre>
                         
 
-                            <pre>  File "D:\auto\AutoTest\Launcher_test\basic_oper.py", line 94, in click_by_xpath
-    raise Exception('元素%s对象获取失败' % (xpath_info))
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\basic_oper.py", line 91, in click_by_xpath
+    get_target[1].click()
 </pre>
                         
 
-                            <pre>Exception: 元素/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[3]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.TextView对象获取失败
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
 </pre>
                         
 
-                            <pre>芒果TV
-test_myjob1 (test_main.MqcTest)执行——>【错误Error】
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+</pre>
+                        
+
+                            <pre>selenium.common.exceptions.StaleElementReferenceException: Message: The element 'By.xpath: /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.TextView' does not exist in DOM anymore
+
+</pre>
+                        
+
+                            <pre>test_Personal3 (test_main.MqcTest)执行——>【错误Error】
 </pre>
                         
                         
@@ -524,11 +421,11 @@ test_myjob1 (test_main.MqcTest)执行——>【错误Error】
                 </tr>
             
                 <tr>
-                    <td>10</td>
+                    <td>5</td>
                     <td class="MqcTest">MqcTest</td>
-                    <td>test_myjob2</td>
-                    <td>进入我的应用，去应用市场下载一个排行榜的应用，下载完成后卸载，查看是否卸载成功</td>
-                    <td>62.7s</td>
+                    <td>test_Personal4</td>
+                    <td>进入收藏的明星，去收藏一个明星后删除，若已有收藏的明星，则先全部删除然后点击去看一看</td>
+                    <td>26.2s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -542,7 +439,359 @@ test_myjob1 (test_main.MqcTest)执行——>【错误Error】
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>test_myjob2 (test_main.MqcTest)执行——>【通过】
+                            <pre>test_Personal4 (test_main.MqcTest)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>6</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_Personal5</td>
+                    <td>进入我的预约，去预约一部影片，若已有预约的影片，则先全部删除然后点击去看一看</td>
+                    <td>27.2s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>test_Personal5 (test_main.MqcTest)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>7</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_button</td>
+                    <td>None</td>
+                    <td>20.6s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>test_button (test_main.MqcTest)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>8</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_changemode1</td>
+                    <td>标准模式切换到长辈模式</td>
+                    <td>26.5s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 628, in run
+    testMethod()
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 561, in test_changemode1
+    basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView")
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\basic_oper.py", line 94, in click_by_xpath
+    raise Exception('元素%s对象获取失败' % (xpath_info))
+</pre>
+                        
+
+                            <pre>Exception: 元素/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.TextView对象获取失败
+</pre>
+                        
+
+                            <pre>test_changemode1 (test_main.MqcTest)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>9</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_desktop1</td>
+                    <td>在卡片桌面移动组件,桌面组件只允许有4行</td>
+                    <td>26.0s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 628, in run
+    testMethod()
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 499, in test_desktop1
+    basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.FrameLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.TextView")
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\basic_oper.py", line 94, in click_by_xpath
+    raise Exception('元素%s对象获取失败' % (xpath_info))
+</pre>
+                        
+
+                            <pre>Exception: 元素/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.FrameLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.TextView对象获取失败
+</pre>
+                        
+
+                            <pre>test_desktop1 (test_main.MqcTest)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>10</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_desktop2</td>
+                    <td>在卡片桌面添加组件，桌面组件只允许有4行</td>
+                    <td>26.8s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>test_desktop2 (test_main.MqcTest)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>11</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_desktop3</td>
+                    <td>在卡片桌面移除组件，桌面组件只允许有4行</td>
+                    <td>30.9s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 628, in run
+    testMethod()
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 549, in test_desktop3
+    basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[4]/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.TextView")
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\basic_oper.py", line 94, in click_by_xpath
+    raise Exception('元素%s对象获取失败' % (xpath_info))
+</pre>
+                        
+
+                            <pre>Exception: 元素/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[4]/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.TextView对象获取失败
+</pre>
+                        
+
+                            <pre>test_desktop3 (test_main.MqcTest)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>12</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_movie1</td>
+                    <td>进入芒果tv二级页播放视频</td>
+                    <td>30.4s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>test_movie1 (test_main.MqcTest)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>13</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_myjob1</td>
+                    <td>进入我的应用，移动应用，测试环境为：组件桌面，我的应用置于第一位下方</td>
+                    <td>30.8s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 59, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Users\DangBei\AppData\Local\Programs\Python\Python37\lib\unittest\case.py", line 628, in run
+    testMethod()
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 410, in test_myjob1
+    "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.view.View[2]")
+</pre>
+                        
+
+                            <pre>  File "D:\auto\AutoTest\Launcher_test\basic_oper.py", line 94, in click_by_xpath
+    raise Exception('元素%s对象获取失败' % (xpath_info))
+</pre>
+                        
+
+                            <pre>Exception: 元素/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.view.View[2]对象获取失败
+</pre>
+                        
+
+                            <pre>test_myjob1 (test_main.MqcTest)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>14</td>
+                    <td class="MqcTest">MqcTest</td>
+                    <td>test_myjob2</td>
+                    <td>进入我的应用，去应用市场下载一个排行榜的应用，下载完成后卸载，查看是否卸载成功</td>
+                    <td>31.1s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+  File "D:\auto\AutoTest\Launcher_test\test_main.py", line 447, in test_myjob2
+    basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.view.View[2]")
+  File "D:\auto\AutoTest\Launcher_test\basic_oper.py", line 94, in click_by_xpath
+    raise Exception('元素%s对象获取失败' % (xpath_info))
+Exception: 元素/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.view.View[2]对象获取失败
+test_myjob2 (test_main.MqcTest)执行——>【通过】
 </pre>
                         
                         
@@ -676,7 +925,7 @@ test_myjob1 (test_main.MqcTest)执行——>【错误Error】
                 data: [
                     {value: 9, name: '通过'},
                     {value: 0, name: '失败'},
-                    {value: 1, name: '错误'},
+                    {value: 5, name: '错误'},
                     {value: 0, name: '跳过'}
                 ]
             }
@@ -696,8 +945,8 @@ test_myjob1 (test_main.MqcTest)执行——>【错误Error】
             {
                 name: '测试结果',
                 type: 'gauge',
-                detail: {formatter: '90.00%'},
-                data: [{value: '90.00', name: '用例通过率'}],
+                detail: {formatter: '64.29%'},
+                data: [{value: '64.29', name: '用例通过率'}],
                 axisLine: {
                     lineStyle: {
                         color: [

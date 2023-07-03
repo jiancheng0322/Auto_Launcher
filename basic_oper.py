@@ -132,7 +132,7 @@ def get_xpath_is_checked(driver,xpath_info):
         raise Exception('元素%s对象获取失败'%(xpath_info))
 def click_by_text(driver,name):
     '''
-    通过id查找元素并点击
+    通过文本查找元素并点击
     '''
     get_target=appium_oper.find_ele_by_text_contains(driver,name)
     time.sleep(2)
