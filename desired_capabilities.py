@@ -11,7 +11,7 @@ def get_desired_capabilities():
         "platformVersion": "9",
         "appPackage": "com.dangbei.leard.leradlauncher",
         "appActivity": ".ui.splash.SplashActivity",
-        "deviceName": "10.192.28.152:5555",
+        "deviceName": "10.192.110.75:5555",
         "automationName": "Appium",
         "noReset": "True"
     }
@@ -19,4 +19,6 @@ def get_desired_capabilities():
 
 
 def get_uri():
+    # return "http://127.0.0.1:4724/wd/hub"
     return "http://localhost:4723/wd/hub"
+

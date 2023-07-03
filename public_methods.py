@@ -7,24 +7,36 @@
 版本记录：
 '''
 import appium_oper
+import board
 from appium import webdriver
 import time
 import basic_oper
 import re
 
 
+def moreFunction():
+    for i in range(0, 4):
+        board.remotecontrol("left")
+        time.sleep(1)
+    for i in range(0, 7):
+        board.remotecontrol("down")
+        time.sleep(1)
+
+
 def longpress(self):
-        '''
-        长按选中
-        '''
-def copy_to_other_place(driver,conf_get_mapId,path,strategy):
-        '''
-        复制到指定地方：目前地方仅限共享空间与硬盘根目录
-        :param driver:
-        :param path:目的路径：0：共享空间；1：硬盘根目录
-        :param strategy:复制策略：0：跳过；1：替换；2：保留两者
-        :return:
-        '''
+    '''
+    长按选中
+    '''
+
+
+def copy_to_other_place(driver, conf_get_mapId, path, strategy):
+    '''
+    复制到指定地方：目前地方仅限共享空间与硬盘根目录
+    :param driver:
+    :param path:目的路径：0：共享空间；1：硬盘根目录
+    :param strategy:复制策略：0：跳过；1：替换；2：保留两者
+    :return:
+    '''
         listpath = [0,1]
         liststrategy = [0,1,2]
         try:
@@ -262,7 +274,7 @@ def gettext(driver,button):
     :param button:
     :return:
     '''
-    tvtitle = appium_oper.wait_ele_by_xpath(driver,button, 5)
+    tvtitle = driver.find_element_by_xpath(button)
     title = tvtitle[1].text
     if title is not None:
         return title
