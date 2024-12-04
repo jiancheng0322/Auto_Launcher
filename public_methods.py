@@ -30,13 +30,6 @@ def longpress(self):
 
 
 def copy_to_other_place(driver, conf_get_mapId, path, strategy):
-    '''
-    复制到指定地方：目前地方仅限共享空间与硬盘根目录
-    :param driver:
-    :param path:目的路径：0：共享空间；1：硬盘根目录
-    :param strategy:复制策略：0：跳过；1：替换；2：保留两者
-    :return:
-    '''
         listpath = [0,1]
         liststrategy = [0,1,2]
         try:

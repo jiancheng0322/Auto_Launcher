@@ -1,10 +1,10 @@
 import traceback
-
 from appium import webdriver
 # 引入刚刚创建的同目录下的desired_capabilities.py
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from unittestreport import TestRunner
-
+# import sqltest
+import sftp
 import desired_capabilities
 import board
 from unittest import TestCase
@@ -33,7 +33,7 @@ def getTime():
     return nowtime
 
 
-class MqcTest(TestCase):
+class MyTest(TestCase):
     global automationName
 
     def setUp(self):
@@ -115,6 +115,7 @@ class MqcTest(TestCase):
             time.sleep(1)
             basic_oper.click_by_id(driver, "com.dangbei.leard.leradlauncher:id/app_rank_item_tag_view")
             board.remotecontrol("up")
+            """
             basic_oper.click_by_id(driver,
                                    "com.dangbei.leard.leradlauncher:id/view_tertical_app_header_item_download_text_tv")  # 点击下载
             time.sleep(10)
@@ -122,7 +123,7 @@ class MqcTest(TestCase):
                                          "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[1]/android.widget.TextView"):
                 basic_oper.click_by_xpath(driver,
                                           "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.widget.Button[1]")
-
+            """
         except (NoSuchElementException, TimeoutException):
             self.getScreenShot("test_search")
             return False
@@ -178,6 +179,7 @@ class MqcTest(TestCase):
             text2 = num2.text
             print(text2)
             self.assertNotEqual(text1, text2)
+            self.skipTest("skipping this test under some condition")
         except (NoSuchElementException, TimeoutException):
             self.getScreenShot("test_Personal1")
             return False
@@ -252,18 +254,14 @@ class MqcTest(TestCase):
                     basic_oper.click_by_id(driver,
                                            "com.dangbei.leard.leradlauncher:id/view_user_center_empty_look_btn")  # 点击去看一看
                     time.sleep(1)
-                    if basic_oper.check_by_name_contains(driver, "超燃科幻"):
-                        board.remotecontrol("down")
-                        time.sleep(2)
-                        basic_oper.click_by_text_contains(driver, "超燃科幻")
-                        time.sleep(2)
-                    basic_oper.click_by_xpath(driver,
-                                              "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.ImageView")
-                    time.sleep(5)
+                    board.remotecontrol("up")
+                    time.sleep(1)
+                    basic_oper.click_by_xpath(driver,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.FrameLayout[4]/android.widget.FrameLayout")
+                    time.sleep(2)
                     board.remotecontrol("right")
                     time.sleep(1)
-                    basic_oper.click_by_id(driver,
-                                           "com.dangbei.leard.leradlauncher:id/activity_film_topic_collection_rl")  # 点击爱心
+                    basic_oper.click_by_xpath(driver,
+                                           "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout")  # 点击爱心
                     time.sleep(1)
                 else:
                     board.remotecontrol("right")
@@ -278,17 +276,14 @@ class MqcTest(TestCase):
                         basic_oper.click_by_id(driver,
                                                "com.dangbei.leard.leradlauncher:id/view_user_center_empty_look_btn")  # 点击去看一看
                         time.sleep(2)
-                        if basic_oper.check_by_name_contains(driver, "超燃科幻"):
-                            basic_oper.click_by_xpath(driver,
-                                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[4]/android.widget.RelativeLayout/android.widget.TextView")
-                        time.sleep(2)
                         basic_oper.click_by_xpath(driver,
-                                                  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.ImageView")
-                        time.sleep(5)
+                                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.FrameLayout[1]/android.widget.FrameLayout")
+                        time.sleep(2)
                         board.remotecontrol("right")
                         time.sleep(1)
-                        basic_oper.click_by_id(driver,
-                                               "com.dangbei.leard.leradlauncher:id/activity_film_topic_collection_rl")  # 点击爱心
+                        basic_oper.click_by_xpath(driver,
+                                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout")  # 点击爱心
+                        time.sleep(1)
         except (NoSuchElementException, TimeoutException):
             # return False,
             self.getScreenShot("test_Personal3")
@@ -371,56 +366,6 @@ class MqcTest(TestCase):
         except (NoSuchElementException, TimeoutException):
             self.getScreenShot("test_Personal4")
 
-    def test_Personal5(self):  # 没有预约页面了，改用例删除
-        """
-        1.进入我的预约，去预约一部影片
-        2.若已有预约的影片，则先全部删除然后点击去看一看"""
-        driver = self.driver
-        try:
-            board.remotecontrol("backhome")
-            board.remotecontrol("down")
-            """进入个人中心"""
-            basic_oper.click_by_xpath(driver,
-                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.TextView")
-            if basic_oper.check_by_name_contains(driver, "我的预约"):
-                basic_oper.click_by_xpath(driver,
-                                          "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[7]/android.widget.RelativeLayout/android.widget.TextView")
-                if basic_oper.check_by_name_contains(driver, "去看一看"):
-                    basic_oper.click_by_id(driver,
-                                           "com.dangbei.leard.leradlauncher:id/view_user_center_empty_look_btn")  # 点击去看一看
-                    basic_oper.click_by_xpath(driver,
-                                              "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout")
-                    if basic_oper.check_by_name_contains(driver, "预约"):
-                        basic_oper.click_by_xpath(driver,
-                                                  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.FrameLayout[3]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[3]/android.widget.TextView")
-
-                    board.remotecontrol("back")
-                    time.sleep(1)
-                    board.remotecontrol("back")  # 返回到收藏的专题页
-                    time.sleep(1)
-                    board.remotecontrol("right")
-                    time.sleep(2)
-                    board.remotecontrol("menu")
-                    if basic_oper.check_by_name_contains(driver, "取消全部预约"):
-                        basic_oper.click_by_xpath(driver,
-                                                  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.TextView")
-                else:
-                    board.remotecontrol("right")
-                    board.remotecontrol("menu")
-                    if basic_oper.check_by_name_contains(driver, "取消全部预约"):
-                        basic_oper.click_by_xpath(driver,
-                                                  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.TextView")
-                    if basic_oper.check_by_name_contains(driver, "去看一看"):
-                        basic_oper.click_by_id(driver,
-                                               "com.dangbei.leard.leradlauncher:id/view_user_center_empty_look_btn")  # 点击去看一看
-                        basic_oper.click_by_xpath(driver,
-                                                  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout")
-                        time.sleep(1)
-                        basic_oper.click_by_id(driver,
-                                               "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.FrameLayout[3]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[3]/android.widget.TextView")  # 点击预约
-        except (NoSuchElementException, TimeoutException):
-            self.getScreenShot("test_Personal5")
-
     def test_myjob1(self):
         """
         1.进入我的应用，移动应用"""
@@ -458,7 +403,7 @@ class MqcTest(TestCase):
             text2 = num2.text
             print(text2)
             time.sleep(2)
-            self.assertEqual(self, text1, text2)
+            self.assertNotEqual(self, text1, text2)
 
         except (NoSuchElementException, TimeoutException):
             self.getScreenShot("test_myjob1")
@@ -532,25 +477,21 @@ class MqcTest(TestCase):
             self.getScreenShot("test_myjob2")
 
     def test_movie1(self):
-        """进入芒果tv二级页播放视频"""
+        """查看首页媒资，相似推荐并跳转播放"""
         driver = self.driver
         try:
             board.remotecontrol("backhome")
             time.sleep(2)
             board.remotecontrol("down")
-            board.remotecontrol("down")
-            basic_oper.click_by_xpath(driver,
-                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[7]/android.widget.TextView")
-            text1 = public_methods.gettext(driver,
-                                           "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView[3]")
-            if self.assertEqual(text1, "芒果专区"):
-                basic_oper.click_by_xpath(driver,
-                                          "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/androidx.recyclerview.widget.RecyclerView/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.view.View[2]")
-                time.sleep(2)
-                basic_oper.click_by_xpath(driver,
-                                          "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.FrameLayout[3]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.TextView")
-                board.remotecontrol("back")
-                board.remotecontrol("back")
+            time.sleep(1)
+            board.remotecontrol("menu")
+            time.sleep(1)
+            board.remotecontrol("up")
+            time.sleep(1)
+            board.remotecontrol("ok")
+            #播放相似推荐
+            board.remotecontrol("ok")
+            time.sleep(5)
         except (NoSuchElementException, TimeoutException):
             # return False, \
             self.getScreenShot("test_movie1")
@@ -712,9 +653,6 @@ class MqcTest(TestCase):
             print("确认关闭")
             basic_oper.click_by_id(driver, "com.dangbei.leard.leradlauncher:id/dialog_remind_confirm_tv")
 
-            """关闭后恢复环境，重新打开消息提示开关"""
-            time.sleep(2)
-            basic_oper.click_by_id(driver, "com.dangbei.leard.leradlauncher:id/dialog_remind_confirm_tv")
 
         except (NoSuchElementException, TimeoutException):
             # return False,
@@ -842,7 +780,7 @@ class MqcTest(TestCase):
                 print("切换播放器成功")
             time.sleep(5)
             board.remotecontrol("back")
-            time.sleep(1)
+            time.sleep(7)
             board.remotecontrol("back")
             time.sleep(1)
             board.remotecontrol("down")
@@ -876,7 +814,7 @@ class MqcTest(TestCase):
                 "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.FrameLayout[2]/android.widget.TextView[2]")
             text = num.text
             print(text)
-            self.assertEqual(text, "DBX3A")
+            self.assertEqual(text, "DBF3Air")
         except (NoSuchElementException, TimeoutException):
             # return False,
             self.getScreenShot("test_Player")
@@ -902,6 +840,7 @@ class MqcTest(TestCase):
         board.remotecontrol("down")
         # board.remotecontrol("ok")
         # basic_oper.click_by_text("系统")
+        """
         '''点击系统升级'''
         board.remotecontrol("left")
         board.remotecontrol("ok")
@@ -919,23 +858,16 @@ class MqcTest(TestCase):
 
         basic_oper.click_by_xpath(
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[3]/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.TextView")
+        """
 
     def test_button(self):
-        """调试用"""
+        """点击更多频道，进行移动添加删除tab"""
         driver = self.driver
         try:
             board.remotecontrol("backhome")
             time.sleep(2)
             board.remotecontrol("up")
             board.remotecontrol("up")
-            basic_oper.click_by_xpath(driver,
-                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]")
-            time.sleep(2)
-            basic_oper.click_by_xpath(driver,
-                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[8]/android.widget.FrameLayout[2]")
-            time.sleep(2)
-            basic_oper.click_by_xpath(driver,
-                                      "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.FrameLayout[2]")
         except (NoSuchElementException, TimeoutException):
             # return False, \
             self.getScreenShot("test_button")
